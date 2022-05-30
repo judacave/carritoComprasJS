@@ -1,6 +1,8 @@
 const clickButton = document.querySelectorAll(".button")
 const tbody = document.querySelector(".tbody")
+const pbody = document.getElementsByClassName("pbody")
 let carrito = []
+let pedidos = []
 clickButton.forEach(btn => {
     btn.addEventListener('click', addToCartItem)
 })
@@ -47,11 +49,13 @@ function addItemCart(newItem) {
 
 function renderCarrito() {
     tbody.innerHTML = ''
+    var i = 1
     carrito.map(item => {
+        
         const tr = document.createElement('tr')
         tr.classList.add('itemCarrito')
         const Content = `
-        <th scope="row">1</th>
+        <th scope="row">${i}</th>
                         <td class="table__productos">
                             <img src=${item.img} alt="" srcset="">
                             <h6 class="title">${item.title}</h6>
@@ -65,12 +69,17 @@ function renderCarrito() {
                             <button class="delete btn btn-danger">x</button>
                         </td>`
         tr.innerHTML = Content
-        tbody.append(tr) 
-        
+        i++
+        tbody.append(tr)         
         tr.querySelector(".delete").addEventListener('click', removeitemCarrito)
         tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
     })
     CarritoTotal()
+}
+
+function renderPedidos() {
+    pbody.innerHTML = '<h1>Esto no sirve</h1>'
+       
 }
 
 function CarritoTotal() {
@@ -101,7 +110,8 @@ function removeitemCarrito(e) {
     }, 2000)
         alert.classList.remove('remove')
     tr.remove()
-    CarritoTotal()
+    renderCarrito()
+    
 }
 
 function sumaCantidad(e) {
@@ -127,5 +137,9 @@ window.onload = function(){
     if(storage){
         carrito =  storage;
         renderCarrito()
+        
     }
 }
+
+
+

@@ -1,8 +1,13 @@
 .body {
     background-color: #110f0fea;
-}
+  }
 header, .alert {
     z-index: 100;
+}
+
+.pills-logo-tab img{
+    max-width: 16px;
+    max-height: 50%;
 }
 
 .description {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SigInUp</title>
+    <link href="css/stylelogin.css" rel="stylesheet" href="">
+</head>
+
+<body>
+    <main class="create">
+        
+        <article class="content">
+            <h1>Inicio de Sesion Administrador</h1>
+            
+            <p>Por favor ingrese las credenciales correspondientes para
+                acceder al panel de administrador.
+            </p>
+            <form class="form" name="form">
+                <label for="username">Nombre de Usuario</label>
+                <input name = "login" id="username" type="text" placeholder="Enter your username">                
+                <label for="password">Contraseña</label>
+                <input name = "password" id="password" type="password" placeholder="Enter your password">
+
+                <!-- <input type="submit" value="Iniciar Sesion"> -->
+                <input onclick= goto() type="button" value="Iniciar Sesion">
+            </form>
+        </article>
+        <section class="legal">
+            <p>
+                Este panel de control es solo para usuarios <a href="#">administradores</a>. Si usted
+                no es un usuario <a href="#">administrador</a>, por favor abstengase de intentar ingresar.
+            </p>
+        </section>
+        </article>
+        </p>
+    </main>
+    <script src="./js/adminlogin.js"></script>
+</body>
+
+</html>
